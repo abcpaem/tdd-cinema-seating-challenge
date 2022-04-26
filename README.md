@@ -32,6 +32,17 @@ from the available seats on the seating plan<br>
 - The program should continue to allocate a random number of seats until it finds there are not enough seats left to complete the request.
 - Once there are not enough seats available to be allocated then the program can halt.
 
+## Solution
+
+Let's start by drawing a user case diagram to have a graphical description of the user interaction with the ticketing system:
+
+<img src="/docs/UserCaseDiagram.png" width="500">
+
+The user will:
+- Look at the seating plan.
+- Request a maximum of 3 tickets.
+- Wait for the system to allocate the seats if they are available.
+- View the allocated tickets.
 
 
 ---
