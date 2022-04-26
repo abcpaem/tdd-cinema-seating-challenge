@@ -44,6 +44,17 @@ The user will:
 - Wait for the system to allocate the seats if they are available.
 - View the allocated tickets.
 
+The following flow diagram will show the steps followed to allocate tickets:
+
+<img src="/docs/FlowDiagram.png" width="500">
+
+As you can see, the system will:
+- Show the seating plan.
+- Allocate tickets as long as they are available, otherwise it will stop the booking process.
+- Show the allocated tickets.
+- Wait for user to request more tickets.
+
+
 
 ---
 ### How to run the tests
