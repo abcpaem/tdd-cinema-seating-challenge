@@ -41,10 +41,10 @@ Let's start by drawing a user case diagram to have a graphical description of th
 The user will:
 - Look at the seating plan.
 - Request a maximum of 3 tickets.
-- Wait for the system to allocate the seats if they are available.
+- Wait for the system to allocate the seats.
 - View the allocated tickets.
 
-The following flow diagram will show the steps followed to allocate tickets:
+The following flow diagram will show in more detail the steps followed to allocate tickets:
 
 <img src="/docs/FlowchartDiagram.png" width="500">
 
