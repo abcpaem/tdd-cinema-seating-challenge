@@ -46,7 +46,7 @@ The user will:
 
 The following flow diagram will show the steps followed to allocate tickets:
 
-<img src="/docs/FlowDiagram.png" width="500">
+<img src="/docs/FlowchartDiagram.png" width="500">
 
 As you can see, the system will:
 - Show the seating plan.
