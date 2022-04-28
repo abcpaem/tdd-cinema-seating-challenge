@@ -54,7 +54,28 @@ As you can see, the system will:
 - Show the allocated tickets.
 - Wait for user to request more tickets.
 
+### Class Diagram
+The following diagram will map out the structure of the ticketing system by modeling its classes, attributes, operations and relationships between objects:
 
+<img src="/docs/ClassDiagram.png" width="980">
+
+These are the assumptions and considerations:
+- The purpose of the ticketing system is to allocate seats requested by a customer, therefore:
+    - There is a *Customer* class that contains the seats allocated for a specific customer.
+    - The allocated tickets can be added, removed or fetched from the customer.
+- There is one abstract class called *Venue*, which:
+    - Contains the basic information for a venue, like name, capacity and seating plan.
+    - Implements the *VenueBehaviour*, which contains methods to interact with the venue.
+    - Can be extended by any type of venue.
+    - It contains a property called *autoFill* that indicates the automatic allocation of seats, meaning that the customer cannot select the seats.
+- The *Cinema* class is a specific type of venue, where:
+    - Its seating plan is formed by rows and a number of seats in those rows. 
+    - The identifiers of the rows and the number of seats will be passed at creation time.
+    - It will automatically create the seating plan at construction time.
+- The *Seat* class:
+    - Will be used by *Cinema* and *Customer* as seat lists for the seating plan and the allocated seats respectively.
+    - Contains a property called *isAllocated* that indicates if the seat has been allocated to a customer or not.
+    - Contains the row name and seat number for the seat.
 
 ---
 ### How to run the tests
