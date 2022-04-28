@@ -77,6 +77,13 @@ These are the assumptions and considerations:
     - Contains a property called *isAllocated* that indicates if the seat has been allocated to a customer or not.
     - Contains the row name and seat number for the seat.
 
+## Test Driven Development process
+
+The TDD approach will start with the simplest case scenario, then it will grow in complexity until all the requirements have been satisfied:
+
+1) Add test to check the Cinema name. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults01.html).
+
+
 ---
 ### How to run the tests
 1) cd to the project root folder in the command line
