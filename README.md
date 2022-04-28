@@ -82,6 +82,7 @@ These are the assumptions and considerations:
 The TDD approach will start with the simplest case scenario, then it will grow in complexity until all the requirements have been satisfied:
 
 1) Add test to check the Cinema name. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults01.html).
+2) Add test to check the Cinema capacity. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults02.html).
 
 
 ---

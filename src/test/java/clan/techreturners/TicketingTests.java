@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TicketingTests {
     private static final String VENUE_NAME = "Cinnamon";
+
     @Test
-    void checkCinemaName()
-    {
+    void checkCinemaName() {
         // Arrange
         Venue cinema = new Cinema(VENUE_NAME);
 
@@ -17,5 +17,20 @@ public class TicketingTests {
 
         // Assert
         assertEquals(VENUE_NAME, venueName);
+    }
+
+    @Test
+    void checkCinemaCapacity() {
+        // Arrange
+        String[] rows = new String[3];
+        int seatsPerRow = 5;
+        int expectedCapacity = 15;
+        Venue cinema = new Cinema(VENUE_NAME, rows, seatsPerRow);
+
+        // Act
+        int capacity = cinema.getCapacity();
+
+        // Assert
+        assertEquals(expectedCapacity, capacity);
     }
 }
