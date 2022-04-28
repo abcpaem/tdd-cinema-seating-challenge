@@ -84,6 +84,7 @@ The TDD approach will start with the simplest case scenario, then it will grow i
 1) Add test to check the Cinema name. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults01.html).
 2) Add test to check the Cinema capacity. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults02.html).
 3) Refactors TicketingTests to apply DRY principle. See all tests passing [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults03.html).
+4) Add test to check the Cinema seating plan. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults04.html).
 
 
 ---

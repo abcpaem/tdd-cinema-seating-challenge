@@ -1,6 +1,6 @@
 package clan.techreturners;
 
-public abstract class Venue {
+public abstract class Venue implements VenueBehaviour {
     private final int capacity;
     private String name;
 
