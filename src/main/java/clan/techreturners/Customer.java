@@ -9,4 +9,8 @@ public class Customer {
     public void addSeat(Seat seat) {
         this.seats.add(seat);
     }
+
+    public List<Seat> getSeats() {
+        return seats;
+    }
 }

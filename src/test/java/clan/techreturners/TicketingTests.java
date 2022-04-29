@@ -3,11 +3,15 @@ package clan.techreturners;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -70,5 +74,34 @@ public class TicketingTests {
         String allSeats = seatsAllocated.stream().map(Objects::toString).collect(Collectors.joining(","));
 
         assertEquals(expectedSeats, allSeats);
+    }
+
+    @ParameterizedTest(name = "{index}) For {0} seat(s) requested, the allocation is: {1}")
+    @MethodSource
+    void checkMultipleSeatsAllocationsWithDifferentCustomers(int[] numberOfSeats, String[] expectedSeats) {
+        // Arrange
+        List<Customer> customers = new ArrayList<>();
+
+        // Act
+        for (int i = 0; i < numberOfSeats.length; i++) {
+            Customer newCustomer = new Customer();
+            customers.add(newCustomer);
+            cinema.allocateSeats(numberOfSeats[i], newCustomer);
+        }
+
+        List<String> seatsAllocated = new ArrayList<>();
+        for (Customer customer : customers)
+            seatsAllocated.add(customer.getSeats().stream().map(Objects::toString).collect(Collectors.joining(",")));
+
+        // Assert
+        assertArrayEquals(expectedSeats, seatsAllocated.toArray());
+    }
+
+    public static Stream<Arguments> checkMultipleSeatsAllocationsWithDifferentCustomers() {
+        return Stream.of(
+                Arguments.of(new int[]{1, 2, 3}, new String[]{"A1", "A2,A3", "A4,A5,B1"}),
+                Arguments.of(new int[]{2, 2, 3, 3}, new String[]{"A1,A2", "A3,A4", "A5,B1,B2", "B3,B4,B5"}),
+                Arguments.of(new int[]{2, 2, 3, 3, 2, 1, 3}, new String[]{"A1,A2", "A3,A4", "A5,B1,B2", "B3,B4,B5", "C1,C2", "C3", "C4,C5"})
+        );
     }
 }

@@ -91,6 +91,7 @@ The TDD approach will start with the simplest case scenario, then it will grow i
 8) Add test to allocate two seats for a customer. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults08.html).
 9) Add test to allocate three seats for a customer. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults09.html).
 10) Refactor seats allocation for one customer. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults10.html).
+11) Add test to check multiple seats allocation with different customers. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults11.html).
 
 
 ---
