@@ -14,6 +14,10 @@ public class Seat {
         return isAllocated;
     }
 
+    public void setAllocated(boolean allocated) {
+        isAllocated = allocated;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

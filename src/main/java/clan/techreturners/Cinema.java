@@ -2,6 +2,7 @@ package clan.techreturners;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cinema extends Venue {
     String[] rows;
@@ -35,5 +36,25 @@ public class Cinema extends Venue {
     @Override
     public boolean hasSeatsAvailable() {
         return seatingPlan.stream().filter(seat -> !seat.isAllocated()).count() > 0;
+    }
+
+    @Override
+    public List<Seat> allocateSeats(int numberOfSeats, Customer customer) {
+        List<Seat> seatsAllocated = new ArrayList<>();
+
+        if (isAutoAllocate()) {
+            List<Seat> availableSeats = seatingPlan.stream().filter(seat -> !seat.isAllocated()).collect(Collectors.toList());
+            int numSeatsAllocated = 0;
+            for (Seat seat : availableSeats) {
+                if (!seat.isAllocated()) {
+                    seat.setAllocated(true);
+                    seatsAllocated.add(seat);
+                    customer.addSeat(seat);
+                    numSeatsAllocated++;
+                }
+                if (numSeatsAllocated == numberOfSeats) break;
+            }
+        }
+        return seatsAllocated;
     }
 }
