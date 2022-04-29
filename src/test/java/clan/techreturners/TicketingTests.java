@@ -2,6 +2,8 @@ package clan.techreturners;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.List;
 import java.util.Objects;
@@ -12,9 +14,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TicketingTests {
     private static final String VENUE_NAME = "Cinnamon";
     private Venue cinema;
+    private Customer customer;
 
     @BeforeEach
     void Init() {
+        customer = new Customer();
         String[] rows = new String[]{"A", "B", "C"};
         int seatsPerRow = 5;
         cinema = new Cinema(VENUE_NAME, rows, seatsPerRow);
@@ -55,46 +59,16 @@ public class TicketingTests {
         assertEquals(true, cinema.isAutoAllocate());
     }
 
-    @Test
-    void checkOneSeatAllocation() {
-        // Arrange
-        Customer customer = new Customer();
-        String expectedSeat = "A1";
-
-        // Act
-        List<Seat> seatsAllocated = cinema.allocateSeats(1, customer);
-        String seatAllocated = seatsAllocated.get(0).toString();
-
-        // Assert
-        assertAll(() -> assertTrue(seatsAllocated.size() == 1),
-                () -> assertEquals(expectedSeat, seatAllocated));
-    }
-
-    @Test
-    void checkTwoSeatsAllocation() {
-        // Arrange
-        Customer customer = new Customer();
-        String expectedSeats = "A1,A2";
-
-        // Act
-        List<Seat> seatsAllocated = cinema.allocateSeats(2, customer);
+    @ParameterizedTest(name = "{index}) For {0} seat(s) requested, the allocation is: {1}")
+    @CsvSource(delimiterString = "->", textBlock = """
+            1 -> A1
+            2 -> A1,A2
+            3 -> A1,A2,A3
+            """)
+    void checkSeatsAllocationForOneCustomer(int numberOfSeats, String expectedSeats) {
+        List<Seat> seatsAllocated = cinema.allocateSeats(numberOfSeats, customer);
         String allSeats = seatsAllocated.stream().map(Objects::toString).collect(Collectors.joining(","));
 
-        // Assert
-        assertEquals(expectedSeats, allSeats);
-    }
-
-    @Test
-    void checkThreeSeatsAllocation() {
-        // Arrange
-        Customer customer = new Customer();
-        String expectedSeats = "A1,A2,A3";
-
-        // Act
-        List<Seat> seatsAllocated = cinema.allocateSeats(3, customer);
-        String allSeats = seatsAllocated.stream().map(Objects::toString).collect(Collectors.joining(","));
-
-        // Assert
         assertEquals(expectedSeats, allSeats);
     }
 }
