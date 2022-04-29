@@ -27,4 +27,9 @@ public class Cinema extends Venue {
     public List<Seat> getSeatingPlan() {
         return seatingPlan;
     }
+
+    @Override
+    public boolean hasSeatsAvailable() {
+        return seatingPlan.stream().filter(seat -> !seat.isAllocated()).count() > 0;
+    }
 }

@@ -43,4 +43,9 @@ public class TicketingTests {
         // Assert
         assertAll(() -> assertEquals(expectedFirstSeat, firstSeat), () -> assertEquals(expectedLastSeat, lastSeat));
     }
+
+    @Test
+    void checkIfCinemaHasSeatsAvailable() {
+        assertEquals(true, cinema.hasSeatsAvailable());
+    }
 }

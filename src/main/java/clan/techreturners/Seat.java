@@ -3,10 +3,15 @@ package clan.techreturners;
 public class Seat {
     private final String rowName;
     private final int seatNumber;
+    private boolean isAllocated;
 
     public Seat(String rowName, int seatNumber) {
         this.rowName = rowName;
         this.seatNumber = seatNumber;
+    }
+
+    public boolean isAllocated() {
+        return isAllocated;
     }
 
     @Override
