@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -66,5 +68,19 @@ public class TicketingTests {
         // Assert
         assertAll(() -> assertTrue(seatsAllocated.size() == 1),
                 () -> assertEquals(expectedSeat, seatAllocated));
+    }
+
+    @Test
+    void checkTwoSeatsAllocation() {
+        // Arrange
+        Customer customer = new Customer();
+        String expectedSeats = "A1,A2";
+
+        // Act
+        List<Seat> seatsAllocated = cinema.allocateSeats(2, customer);
+        String allSeats = seatsAllocated.stream().map(Objects::toString).collect(Collectors.joining(","));
+
+        // Assert
+        assertEquals(expectedSeats, allSeats);
     }
 }

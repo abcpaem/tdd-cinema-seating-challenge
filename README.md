@@ -88,6 +88,7 @@ The TDD approach will start with the simplest case scenario, then it will grow i
 5) Add test to check if the Cinema has seats available. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults05.html).
 6) Add test to check if the Cinema will allocate seats automatically. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults06.html).
 7) Add test to allocate one seat for a customer. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults07.html).
+8) Add test to allocate two seats for a customer. See test [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResults08.html).
 
 
 ---
