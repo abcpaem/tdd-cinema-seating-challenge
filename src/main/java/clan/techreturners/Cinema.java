@@ -8,11 +8,15 @@ public class Cinema extends Venue {
     int seatsPerRow;
     List<Seat> seatingPlan = new ArrayList<>();
 
-    public Cinema(String name, String[] rows, int seatsPerRow) {
-        super(name, rows.length * seatsPerRow);
+    public Cinema(String name, String[] rows, int seatsPerRow, boolean autoAllocate) {
+        super(name, rows.length * seatsPerRow, autoAllocate);
         this.rows = rows;
         this.seatsPerRow = seatsPerRow;
         createSeatingPlan();
+    }
+
+    public Cinema(String name, String[] rows, int seatsPerRow) {
+        this(name, rows, seatsPerRow, true);
     }
 
     private void createSeatingPlan() {

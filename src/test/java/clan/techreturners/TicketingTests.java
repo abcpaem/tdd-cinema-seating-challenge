@@ -48,4 +48,9 @@ public class TicketingTests {
     void checkIfCinemaHasSeatsAvailable() {
         assertEquals(true, cinema.hasSeatsAvailable());
     }
+
+    @Test
+    void checkIfCinemaWillAllocateSeatsAutomatically() {
+        assertEquals(true, cinema.isAutoAllocate());
+    }
 }
