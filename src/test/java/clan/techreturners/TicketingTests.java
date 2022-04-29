@@ -1,5 +1,7 @@
 package clan.techreturners;
 
+import clan.techreturners.ticketing.location.*;
+import clan.techreturners.ticketing.users.Customer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

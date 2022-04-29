@@ -1,4 +1,6 @@
-package clan.techreturners;
+package clan.techreturners.ticketing.location;
+
+import clan.techreturners.ticketing.users.Customer;
 
 import java.util.List;
 

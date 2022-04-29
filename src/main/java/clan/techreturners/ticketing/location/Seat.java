@@ -1,4 +1,4 @@
-package clan.techreturners;
+package clan.techreturners.ticketing.location;
 
 public class Seat {
     private final String rowName;

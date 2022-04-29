@@ -1,4 +1,4 @@
-package clan.techreturners;
+package clan.techreturners.ticketing.location;
 
 public abstract class Venue implements VenueBehaviour {
     private final int capacity;

@@ -1,4 +1,6 @@
-package clan.techreturners;
+package clan.techreturners.ticketing.users;
+
+import clan.techreturners.ticketing.location.Seat;
 
 import java.util.ArrayList;
 import java.util.List;
