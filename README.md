@@ -116,10 +116,13 @@ This is the list of changes:
 
 
 ---
-### How to run the tests
+### How to run the application
 1) cd to the project root folder in the command line
 2) `mvn compile`
-3) `mvn test`
+3) `mvn exec:java -Dexec.mainClass=clan.techreturners.ticketing.Main`
+
+To run tests use:
+- ``mvn test``
 
 ## Technology
 This project was built using:
