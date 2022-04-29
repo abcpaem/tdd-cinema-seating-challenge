@@ -95,6 +95,26 @@ The TDD approach will start with the simplest case scenario, then it will grow i
 
 Finally, you can see all the tests passing [here](https://htmlview.glitch.me/?https://github.com/abcpaem/tdd-cinema-seating-challenge/blob/main/docs/TestResultsAll.html).
 
+### Class Diagram (Version 2)
+
+During the process of writing the tests and implementing all the classes and interfaces needed for the solution, there were some minor changes from the original design, so here is the version 2 of the class diagram: 
+
+<img src="/docs/ClassDiagramV2.png" width="980">
+
+This is the list of changes:
+- In the *VenueBehaviour* interface:
+  - The method *showSeatingPlan* was replaced for *getSeatingPlan* to return a list of seats instead of void, which was originally thought as a way to print the seating plan.
+  - A new parameter of type *Customer* was added to the *allocateSeats* method in order to add the allocated seats to the customer.
+- In the *Venue* class, the attribute *autoFill* was renamed to *autoAllocate* to reflect a better naming for its use.
+- In the *Customer* class:
+  - The name was removed as it is not relevant at this point.
+  - The attribute *allocatedSeats* was renamed to just *seats*.
+  - Only 2 methods were needed, one for adding a seat and another to get all the allocated seats from a customer.
+- The *Seat* class only contains in the methods section:
+  - The getter and setter for the *isAllocated* attribute.
+  - The overriding of the method *toString()* so it can show the seat as a string concatenation of the row and seat number.
+
+
 ---
 ### How to run the tests
 1) cd to the project root folder in the command line
