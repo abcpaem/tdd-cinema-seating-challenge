@@ -83,4 +83,18 @@ public class TicketingTests {
         // Assert
         assertEquals(expectedSeats, allSeats);
     }
+
+    @Test
+    void checkThreeSeatsAllocation() {
+        // Arrange
+        Customer customer = new Customer();
+        String expectedSeats = "A1,A2,A3";
+
+        // Act
+        List<Seat> seatsAllocated = cinema.allocateSeats(3, customer);
+        String allSeats = seatsAllocated.stream().map(Objects::toString).collect(Collectors.joining(","));
+
+        // Assert
+        assertEquals(expectedSeats, allSeats);
+    }
 }
