@@ -1,4 +1,4 @@
-package clan.techreturners;
+package clan.techreturners.ticketing;
 
 import clan.techreturners.ticketing.location.*;
 import clan.techreturners.ticketing.users.Customer;
